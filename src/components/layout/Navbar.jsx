@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import '../../styles/navbar.css'
 
 const Navbar = () => {
-  const [isLoggedIn] = useState(false);
+  const [isLoggedIn] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -20,10 +20,13 @@ const Navbar = () => {
           <h1>FriendConnect</h1>
         </div>
         <div className="nav-links">
-          <Link to="/" className="nav-link"></Link>
+          <Link to="/" className="nav-link">Home</Link>
 
           {isLoggedIn ? (
             <>
+            <Link to="/requests" className="nav-link">
+              Friend Requests
+            </Link>
               <Link to="/friends" className="nav-link">
                 Friends
               </Link>
